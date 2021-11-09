@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function getMax(a, b) {
+            if (a >= b) {
+                famx = a
+            } else {
+                famx = b
+            }
+            document.write(famx + '<br>');
+        }
+
+        var x = 0,
+            y = 0;
+        var max = 0
+
+        x = 10,
+            y = 20;
+
+        getMax(x, y);
+
+        x = 200, y = 500;
+
+        getMax(x, y);
+
+        function myadd() { //매개변수 여러개 가능
+
+            var result = 0;
+
+            for (var i = 0; i < arguments.lenth; i++) {
+                result += arguments[i];
+
+            }
+            return result;
+
+
+        }//myadd
+
+
+
+
+        var r = myadd(10, 40);
+
+        document.write(r + '<br>');
+
+
+
+        r = myadd(10, 40, 50, 60, 70, 80);
+
+        document.write(r + '<br>');
+
+
+
+        r = myadd(90, 40, 69, 37);
+
+        document.write(r + '<br>');
+
+
+        // 문제1) choice가 1이면 args에 전달된 값들을 더하고, choice가 2이면 args에 전달된 값들을 곱하여 리턴하는 함수를 작성하시오.
+
+        //         add_mul( choice, ...args) 함수를 조건에 맞게 작성하시오.
+
+        function add_mul(choice, ...args) {
+            var sum = 0;
+            var result = 1;
+
+            if (choice == 1) {
+                for (var i = 0; i < args.length; i++) {
+                    sum += args[i];
+                }
+                return sum;
+            } else if (choice == 2) {
+                for (var i = 0; i < args.length; i++) {
+                    result *= args[i]
+                }
+                return result;
+            }
+        }
+
+
+
+        // 문제2) 다음 배열에서 짝수만 골라 합계를 구하는 함수를 구하시오.
+
+
+
+        arr = [11, 20, 21, 24, 56, 78, 91, 98, 102, 47]
+
+        function sum_odd(arr) {
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 != 0) {
+                    sum += arr[i];
+                }
+            }
+            return sum;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
