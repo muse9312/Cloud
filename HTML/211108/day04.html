@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 문제 1) 돈이 있으면 택시를 타고 가라! 문제 2) 돈이 있으면 택시를 타고 가고, 돈이 없으면 걸어가라! 문제 3) 만약 3000원
+        // 이상의 돈을 가지고 있으면 택시를 타고 그렇지 않으면 걸어가라. var money = 4000; if (money >= 3000) {
+        // alert("어서타") } else {     alert("걸어가!") } 문제 4) 돈이 3000원 이상 있거나 카드가 있다면 택시를
+        // 타고 그렇지 않으면 걸어가라.
+
+        var money = 2500;
+
+        var card = false;
+
+        if (money >= 3000 || card) {
+            alert("타라")
+        } else {
+            alert("걸어가")
+        }
+
+        // 문제 5) 주머니에 돈이 있으면 택시를 타고, 주머니에 돈은 없지만 카드가 있으면 택시를 타고, 돈도 없고 카드도 없으면 걸어가라
+        var money = 2500;
+        var card;
+
+        // 다중
+        if (money > 0) {
+            alert("택시타")
+        } else if (money < 0 || card == true) {
+            alert("택시타")
+        } else {
+            alert("걸어가")
+        }
+    </script>
+
+</body>
+
+</html>

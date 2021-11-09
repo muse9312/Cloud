@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // var arr = [10, 20, 30, 40, 50];
+        // //alert(arr); i = index
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] < 30) {
+        //         alert(arr[i] + '입니다');
+        //     }
+        // }
+
+        // 문제 1) 주머니에 돈이 있으면  택시를 타고, 주머니에 돈은 없지만 카드가 있으면 택시를 타고, 돈도 업고 카드도 없으면 걸어가라  
+
+        // var pocket = ['money', 'card']
+
+        // for (var i = 0; i < pocket.length; i++) {
+        //     if (pocket[i] == 'money') {
+        //         alert('택시를 타라:money')
+        //     } else if (pocket[i] == 'card') {
+        //         alert('택시를 타라:card')
+        //     } else {
+        //         alert('걸어가라')
+        //     }
+        // }
+
+        document.write('<h1>별찍기</h1>')
+
+        document.write('<h1>1</h1>')
+
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                document.write('*')
+            }
+            document.write('</br>')
+
+        }
+
+        document.write('<h1>2</h1>')
+
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j <= i; j++) {
+                document.write('*')
+            }
+            document.write('<br>');
+        }
+
+        document.write('<h1>3</h1>')
+
+        for (var i = 0; i < 5; i++) {
+            for (var j = 4; j > i; j--) {
+                document.write('&nbsp');
+            }
+            for (var j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<h1>4</h1>')
+
+        for (let i = 0; i < 4; i++) {
+            for (let j = 4; j > i; j--) {
+                document.write('&nbsp');
+            }
+            for (let j = 0; j <= i; j++) {
+                document.write('*');
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
