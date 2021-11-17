@@ -18,18 +18,11 @@ public class MyFrame extends JFrame {
     @Override
     public void paint(Graphics g) {
         Random rand = new Random();
+
+        Duck[] d = new Duck[10];
         for (int i = 0; i < 10; i++) {
-
-            int x = rand.nextInt(800);
-            int y = rand.nextInt(600);
-
-            int red = rand.nextInt(256);
-            int green = rand.nextInt(256);
-            int blue = rand.nextInt(256);
-            Color c = new Color(red, green, blue);
-            g.setColor(c);
-            g.fillOval(x, y, 30, 30);
-
+            d[i] = new Duck();
+            d[i].paintComponents(g);
         }
 
     }
