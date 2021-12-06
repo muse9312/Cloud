@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './compoenet/Nav';
+import Footer from './compoenet/Footer';
+import Header from './compoenet/Header';
 
 function App() {
   return (
@@ -15,9 +18,15 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+
+<Header />
+  <Nav  />
+  <Footer />
+
           Learn React
         </a>
       </header>
+
     </div>
   );
 }
