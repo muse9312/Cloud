@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Component } from 'react';
 import { Subject } from './Subject';
@@ -14,12 +14,12 @@ class App extends Component {
     this.state = {
       subject: { title: 'WEB', sub: 'World Wide Web!' },
       contents: [
-        {id: 1, title: 'HTML2', desc: 'HTML is for information.'},
-        {id: 2, title: 'CSS2', desc: 'CSS is for design.'},
-        {id: 3, title: 'JavaScript2', desc: 'JavaScript is for interactive.'}
+        { id: 1, title: 'HTML2', desc: 'HTML is for information.' },
+        { id: 2, title: 'CSS2', desc: 'CSS is for design.' },
+        { id: 3, title: 'JavaScript2', desc: 'JavaScript is for interactive.' }
       ],
       mode: 'welcome',  // html
-      welcome: {title: 'welcome', desc: 'Hello, React'}
+      welcome: { title: 'welcome', desc: 'Hello, React' }
     }
   }
 
@@ -27,8 +27,8 @@ class App extends Component {
   findContentById() {
     // 선택된 요소(html, css, js)의 id에 해당하는 객체 찾기
     let content;
-    for(let i = 0; i < this.state.contents.length; i++) {
-      if(this.state.id == this.state.contents[i].id) {
+    for (let i = 0; i < this.state.contents.length; i++) {
+      if (this.state.id == this.state.contents[i].id) {
         content = this.state.contents[i];
         break;
       }
@@ -39,21 +39,25 @@ class App extends Component {
   render() {
     let title, desc;
     let article;
-    if(this.state.mode == 'welcome') {
+    if (this.state.mode == 'welcome') {
       title = this.state.welcome.title;
       desc = this.state.welcome.desc;
 
-    } else if(this.state.mode === 'update') {
+    } else if (this.state.mode === 'update') {
       const content = this.findContentById();
       title = content.title;
       desc = content.desc;
-      article = <UpdateContent
-      title={title} desc={desc}></UpdateContent>
-    } else if(this.state.mode == 'read') {
+      article = <UpdateContent title={title} desc={desc}
+        onSubmit={function (title, desc) {
+          content.title = title;
+          content.desc = desc;
+          this.setState({ mode: 'read' });
+        }.bind(this)}></UpdateContent>
+    } else if (this.state.mode == 'read') {
       const content = this.findContentById();
       title = content.title;
       desc = content.desc;
-    } else if(this.state.mode == 'create') {
+    } else if (this.state.mode == 'create') {
       article = <CreateContent
         onSubmit={function (title, desc) {
           console.log(title, desc);
@@ -71,11 +75,11 @@ class App extends Component {
     return (   // JSX
       <div className="App">
         <Subject
-        title={this.state.subject.title} 
-        sub={this.state.subject.sub}></Subject>
+          title={this.state.subject.title}
+          sub={this.state.subject.sub}></Subject>
 
         <TOC onChangePage={
-          (value) => { 
+          (value) => {
             this.setState(
               { id: value, mode: 'read' }
             );
@@ -89,7 +93,7 @@ class App extends Component {
 
         {/* 조회와 수정 컴포넌트에서 title desc를 공통으로 사용 */}
         <ReadContent title={title} desc={desc}></ReadContent>
-      
+
         {article}
       </div>
     );

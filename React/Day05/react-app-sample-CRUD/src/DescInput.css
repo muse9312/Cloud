@@ -1,0 +1,17 @@
+.desc-input { display: flex; }
+.desc-input input {
+background: orange;
+border: none;
+padding: 0.5rem; font-size: 1.125rem;
+line-height: 1.5;
+}
+.desc-input button {
+outline: none; border: none;
+background: #868e96;
+color: white;
+padding-left: 1rem;
+padding-right: 1rem;
+font-size: 1.5rem;
+transition: 0.1s background ease-in;
+}
+.desc-input button:hover { background: #adb5bd; }
