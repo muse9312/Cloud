@@ -6,16 +6,34 @@ import {
 } from 'react-icons/md';
 import '../css/TodoListItem.css';
 const TodoListItem = (props) => {
-    const { text, checked } = props.todo;
+    const { id, text, checked } = props.todo;
     return (
         <div className="TodoListItem">
-            <div className={checked ? 'checkbox checked' : 'checkbox'}>
+            <div className={checked ? 'checkbox checked' : 'checkbox'}
+                onClick={function () {
+                    props.onToggle(id)
+                }}
+            >
                 {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
                 <div className="text">{text}</div>
             </div>
-            <div className="remove">
+
+            {/* 항목 제거 */}
+            <div className="remove" onClick={function () {
+                props.onRemove(id)
+            }}>
                 <MdRemoveCircleOutline></MdRemoveCircleOutline>
             </div>
+
+            {/* 항목 수정 */}
+            <div className="modify" onClick={function () {
+                props.onRemove(id)
+            }}>
+                <MdRemoveCircleOutline></MdRemoveCircleOutline>
+            </div>
+
+
+
         </div>
     );
 };
