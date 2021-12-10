@@ -1,0 +1,25 @@
+<body>
+    <script>
+        const arr = ['a', 'b', 'c'];
+
+        console.log('리액트에서 자주 사용되는 방식');
+        arr.map((value) => {
+            console.log(value);
+        });
+
+        console.log('1번 방식 - index');
+        for(let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        console.log('2번 방식 - key');
+        for(let key in arr) {
+            console.log(arr[key]);
+        }
+
+        console.log('3번 방식 - value');
+        for(let value of arr) {
+            console.log(value);
+        }
+    </script>
+</body>
