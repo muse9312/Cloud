@@ -2,7 +2,7 @@
 
 import logo from './logo.svg';
 import './App.css';
-import { Component, useState } from 'react';
+import { Component, useState, useEffect } from 'react';
 
 // 단축키 Ctrl + P : 파일 열기
 
@@ -66,6 +66,11 @@ function FunctionComp(props) {
   // index 0과 1 한꺼번에 대입
   const [date, setDate] = useState(new Date().toString());
 
+  useEffect(function () {
+    console.log('FunctionComp => useEffect');
+  });
+
+  console.log('FunctionComp => render');
   return (
     <div className="container">
       <h2>Function Style Component</h2>
