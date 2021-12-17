@@ -1,0 +1,15 @@
+body {
+  padding: 2em;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container > div {
+  margin-left: 2em;
+}
+img {
+  flex-basis: 300px;
+}
