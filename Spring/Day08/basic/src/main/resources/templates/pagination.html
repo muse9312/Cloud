@@ -1,0 +1,10 @@
+<th:block th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}">
+    
+    <a th:if="${page} == ${pageNumber}" 
+            th:text="${pageNumber}" 
+            style="font-weight:bold"></a>
+
+    <a th:href='@{/pagination(page=${pageNumber})}' 
+            th:unless="${page} == ${pageNumber}" 
+            th:text="${pageNumber}"></a>
+</th:block>
