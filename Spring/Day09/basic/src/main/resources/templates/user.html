@@ -1,0 +1,21 @@
+<h1>User</h1>
+<h3>
+  [[ ${name} ]]
+</h3>
+<u>
+  <i>
+    [[ ${number} ]]
+  </i>
+</u>
+<table border='1'>
+  <tr>
+    <td>ID</td>
+    <td>NAME</td>
+    <td>AGE</td>
+  </tr>
+  <tr>
+    <td th:text="${user.userId}"></td>
+    <td th:text="${user.userName}"></td>
+    <td th:text="${user.userAge}"></td>
+  </tr>
+</table>
