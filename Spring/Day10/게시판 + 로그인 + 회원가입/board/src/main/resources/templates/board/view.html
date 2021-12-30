@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head">
+
+</head>
+<body>
+
+<div th:replace="common/header">
+   
+</div>
+
+<nav th:replace="common/nav">
+
+</nav>
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <span class="badge bg-primary rounded-pill" th:text="${board.id} + '번'"></span>
+      <h5 class="card-title" th:text="${board.title}"></h5>
+      <h6 class="card-subtitle mb-2 text-muted" th:text="${board.userId}"></h6>
+      <p class="card-text" th:text="${board.content}"></p>
+    </div>
+  </div>
+</div> 
+<div class="container mt-5">
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="list">목록</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="update">수정</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="delete" th:num="${board.id}">삭제</a>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelector('#delete').addEventListener('click', (e) => {
+    e.preventDefault();
+    if(confirm('삭제하시겠습니까?')) {
+      const num = e.target.getAttribute('num');
+      location = `/board/delete/${num}`;
+    }
+  });
+</script>
+
+<div th:replace="common/footer">
+</div>
+
+</body>
+</html>

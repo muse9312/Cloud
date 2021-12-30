@@ -1,0 +1,28 @@
+<form runat="server">
+  <input accept="image/*" type='file' id="imgInp" />
+  <img id="blah" src="#" alt="your image" />
+</form>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" multiple><br>
+    <input type="submit" value="업로드">
+   </form>
+
+   <form method="post" enctype="multipart/form-data">
+    <input accept="image/*" type='file' id="imgInp" multipart /><br>
+    <img id="blah" src="#" alt="your image" />
+    <input type="submit" value="업로드">
+   </form>
+
+   <script>
+
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+    blah.src = URL.createObjectURL(file)
+  }
+
+  
+}
+
+   </script>

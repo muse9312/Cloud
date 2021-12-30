@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head">
+
+</head>
+<body>
+
+<div th:replace="common/header">
+   
+</div>
+
+<nav th:replace="common/nav">
+
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>번호</th><th>제목</th><th>작성자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="board : ${list}" th:attr="id=${board.id}">
+          <td th:text="${board.id}"></td>
+          <td th:text="${board.title}"></td>
+          <td th:text="${board.userId}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary btn-block" id="write-btn">글쓰기</button>
+  </div>
+</div>
+<script>
+  document.querySelector('#write-btn').addEventListener('click', () => {
+    location = '/board/write';
+  });
+</script>
+
+<div th:replace="common/footer">
+</div>
+
+</body>
+</html>
