@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PracticeApplication<practice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ggoreb.practice.PracticeApplication",
+            "projectName": "practice",
+            "args": ""
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>게시판</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <a class="navbar-brand" th:href="@{/}">게시판</a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a th:if="${session.user != null}" class="nav-link" th:href="@{/signout}" th:text="${session.user.name} + ' (로그아웃)'"></a>
+                <a th:unless="${session.user != null}" class="nav-link" th:href="@{/signin}" th:text="로그인"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="text-center thead-dark">
+            <th>번호</th>
+            <th style="width:50%">제목</th>
+            <th>글쓴이</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:if="${#lists.size('list')} > 0">
+        	<tr th:each="question : ${list}" class="text-center">
+        		<td th:text="${question.id}"></td>
+	            <td class="text-left">
+	                <a th:href="@{/question/detail(id=${question.id})}" th:text="${question.subject}"></a>
+	                <span class="text-danger small ml-2">3</span>
+	            </td>
+	            <td th:text="${question.user}"></td>
+	            <td th:text="${question.createDate}"></td>
+        	</tr>
+        </th:block>
+        <th:block th:unless="${#lists.size('list')} > 0">
+	        <tr>
+	            <td colspan="3">질문이 없습니다.</td>
+	        </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <a th:href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
+
+</div>
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
