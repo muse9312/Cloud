@@ -1,0 +1,6 @@
+rootProject.name = 'eat'
+// include 'eat-step01'
+// include 'eat-step02'
+// include 'eat-step03'
+// include 'eat-step04'
+include 'eat-step05'
